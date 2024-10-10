@@ -13,6 +13,8 @@ app.set('views', './view')
 app.get('/', c_beranda.halaman_awal)
 app.get('/auth/login', c_auth.halaman_login)
 
+app.post('/auth/proses-login', )
+
 app.listen(port, () => {
     console.log(`Server aktif, buka http://localhost:${port}`)
 })
