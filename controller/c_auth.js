@@ -17,7 +17,7 @@ module.exports = {
         let email_exist   = await model_user.cari_email(form_email)
         if (email_exist.length > 0) {
             // cek password
-            res.send('Email sudah terdaftar')
+            res.send('Email ada')
         } else {
             // tendang ke halaman register
             let pesan = `⚠ Email Anda belum terdaftar`
