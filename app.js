@@ -35,6 +35,8 @@ app.post('/auth/proses-login', c_auth.proses_login)
 app.get('/toko', cek_login, c_toko.halaman_utama)
 app.get('/olshop', cek_login, c_olshop.halaman_beranda)
 
+app.get('/olshop/produk', cek_login, c_olshop.halaman_index_produk)
+
 app.listen(port, () => {
     console.log(`Server aktif, buka http://localhost:${port}`)
 })
