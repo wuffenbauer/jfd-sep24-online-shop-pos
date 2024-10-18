@@ -10,10 +10,10 @@
             <div class="col-lg-6">
                 <div class="mb-3">
                     <label class="form-label">Nama Produk</label>
-                    <input type="text" name="form_name" class="form-control">
+                    <input type="text" name="form_nama" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Harga</label>
+                    <label class="form-label">Harga Satuan</label>
                     <input type="number" name="form_harga" class="form-control">
                 </div>
                 <div class="mb-3">
@@ -21,18 +21,19 @@
                     <input type="number" name="form_stok" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Stok</label>
-                    <select name="form_kate" class="form-control">
-                        <option value="" selected>-- pilih --</option>
-                        <option value="">Kategori A</option>
-                        <option value="">Kategori B</option>
+                    <label class="form-label">Kategori</label>
+                    <select name="form_kategori" class="form-control">
+                        <option value="" selected>-- pilih kategori --</option>
+                        <% for (const i in kategoriProduk) { %>
+                            <option value=""><%= kategoriProduk[i].nama %></option>
+                        <% } %>
                     </select>
                 </div>
             </div>
             <div class="col-lg-6">            
                 <div class="mb-3">
                     <label class="form-label">Foto 1</label>
-                    <input type="file" name="form_foto" class="form-control" accept=".jpg, .jpeg, .png, .webp, .svg">
+                    <input type="file" name="form_foto1" class="form-control" accept=".jpg, .jpeg, .png, .webp, .svg">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Foto 2</label>
@@ -40,11 +41,11 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Foto 3</label>
-                    <input type="file" name="form_foto2" class="form-control" accept=".jpg, .jpeg, .png, .webp, .svg">
+                    <input type="file" name="form_foto3" class="form-control" accept=".jpg, .jpeg, .png, .webp, .svg">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Video</label>
-                    <input type="file" name="form_foto2" class="form-control" accept=".mkv, .mp4, .mov, .avi, .svg">
+                    <input type="file" name="form_video" class="form-control" accept=".mp4, .mkv, .mov, .mpeg, .mpg, .avi, .wmv">
                 </div>
             </div>
             <div class="col-12">
