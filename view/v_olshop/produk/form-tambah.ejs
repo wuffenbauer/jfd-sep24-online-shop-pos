@@ -1,0 +1,78 @@
+<%- include('../../v_layout/head') %>
+<%- include('../../v_layout/olshop-header') %>
+
+<div class="container my-5">
+    <h1>Buat Produk</h1>
+    <hr>
+    <br>
+    <form action="/olshop/produk/proses-insert" method="post">
+        <div class="row">         
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <label class="form-label">Nama Produk</label>
+                    <input type="text" name="form_name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Harga</label>
+                    <input type="number" name="form_harga" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Stok</label>
+                    <input type="number" name="form_stok" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Stok</label>
+                    <select name="form_kate" class="form-control">
+                        <option value="" selected>-- pilih --</option>
+                        <option value="">Kategori A</option>
+                        <option value="">Kategori B</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6">            
+                <div class="mb-3">
+                    <label class="form-label">Foto 1</label>
+                    <input type="file" name="form_foto" class="form-control" accept=".jpg, .jpeg, .png, .webp, .svg">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Foto 2</label>
+                    <input type="file" name="form_foto2" class="form-control" accept=".jpg, .jpeg, .png, .webp, .svg">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Foto 3</label>
+                    <input type="file" name="form_foto2" class="form-control" accept=".jpg, .jpeg, .png, .webp, .svg">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Video</label>
+                    <input type="file" name="form_foto2" class="form-control" accept=".mkv, .mp4, .mov, .avi, .svg">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <label class="deskripsi">Deskripsi</label>
+                            <textarea name="form_deskripsi" class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <label class="deskripsi">Spesifikasi</label>
+                            <textarea name="form_spesifikasi" class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <label class="deskripsi">Info Penting</label>
+                            <textarea name="form_info_penting" class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<%- include('../../v_layout/olshop-footer') %>
+<%- include('../../v_layout/foot') %>
