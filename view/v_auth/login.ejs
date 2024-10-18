@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/css-tambahan/layout-login.css">
     <main class="form-signin w-100 m-auto">
         <form method="post" action="/auth/proses-login">
-            <img class="mb-4" src="/gambar/wolf.png" alt="" height="64">
+            <!-- <img class="mb-4" src="/gambar/wolf.png" alt="" height="64"> -->
             <br>
             <% if (typeof notification !== 'undefined') { %>
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -12,10 +12,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <% } %>
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <h1 class="h3 mb-3 fw-normal">Akses masuk</h1>
             <div class="form-floating">
                 <input type="email" class="form-control" name="form_email" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+                <label for="floatingInput">Email</label>
             </div>
             <div class="form-floating">
                 <input type="password" class="form-control" name="form_password" placeholder="Password">
@@ -27,8 +27,8 @@
                     Remember me
                 </label>
             </div> -->
-            <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-body-secondary">&copy;2024</p>
+            <button class="btn btn-primary w-100 py-2" type="submit">Masuk</button>
+            <p class="mt-5 mb-3 text-body-secondary">&copy; 2024 ー Final Project JFD Course-NET</p>
         </form>
     </main>
 </body>
