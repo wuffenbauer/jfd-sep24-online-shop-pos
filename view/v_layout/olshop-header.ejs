@@ -3,7 +3,7 @@
 <header data-bs-theme="dark">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Werehouse.com</a>
+            <a class="navbar-brand" href="#">Blanja.com</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -12,20 +12,20 @@
                     <li class="nav-item">
                             <button class="nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">                                
                                 <i class="fa-solid fa-list"></i>
-                                Category
+                                Kategori
                             </button>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fa-solid fa-sack-dollar"></i>
-                            Sell
+                            Jual
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fa-solid fa-cart-shopping"></i>
-                            Buy
+                            Beli
                         </a>
                     </li>
                 </ul>
@@ -41,34 +41,13 @@
     <div class="collapse" id="collapseExample">
         <div class="card card-body text-white">
             <div class="row">
-                <div class="col-lg-3">
-                    <a href="/olshop/produk/kategori/id">Category A</a><br>
-                    <a href="/olshop/produk/kategori/id">Category A</a><br>
-                    <a href="/olshop/produk/kategori/id">Category A</a><br>
-                    <a href="/olshop/produk/kategori/id">Category A</a><br>
-                    <a href="/olshop/produk/kategori/id">Category A</a><br>
-                </div>
-                <div class="col-lg-3">
-                    <a href="/olshop/produk/kategori/id">Category B</a><br>
-                    <a href="/olshop/produk/kategori/id">Category B</a><br>
-                    <a href="/olshop/produk/kategori/id">Category B</a><br>
-                    <a href="/olshop/produk/kategori/id">Category B</a><br>
-                    <a href="/olshop/produk/kategori/id">Category B</a><br>
-                </div>
-                <div class="col-lg-3">
-                    <a href="/olshop/produk/kategori/id">Category C</a><br>
-                    <a href="/olshop/produk/kategori/id">Category C</a><br>
-                    <a href="/olshop/produk/kategori/id">Category C</a><br>
-                    <a href="/olshop/produk/kategori/id">Category C</a><br>
-                    <a href="/olshop/produk/kategori/id">Category C</a><br>
-                </div>
-                <div class="col-lg-3">
-                    <a href="/olshop/produk/kategori/id">Category D</a><br>
-                    <a href="/olshop/produk/kategori/id">Category D</a><br>
-                    <a href="/olshop/produk/kategori/id">Category D</a><br>
-                    <a href="/olshop/produk/kategori/id">Category D</a><br>
-                    <a href="/olshop/produk/kategori/id">Category D</a><br>
-                </div>
+                <% for (const i in kategoriProduk) { %>
+                    <div class="col-lg-3">
+                        <a href="/olshop/produk/kategori/<%= kategoriProduk[i].id %>" class="text-decoration-none">
+                            <%= kategoriProduk[i].nama %>
+                        </a><br>
+                    </div>
+                <% } %>
             </div>
         </div>
     </div>
