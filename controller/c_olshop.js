@@ -80,5 +80,12 @@ module.exports = {
         }
     },
 
+    detail_produk: async function(req, res) {
+        let data = {
+            kategoriProduk: await m_prod_kategori.getAll()
+        }
+        res.render('v_olshop/produk/detail/', data)
+    },
+
     
 }
