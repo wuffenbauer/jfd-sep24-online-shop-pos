@@ -1,13 +1,16 @@
 const mysql             = require('mysql2')
 const config_database   = require('../config/database')
-const moment = require('moment')
+const moment            = require('moment')
 const db                = config_database.db
 const eksekusi          = config_database.eksekusi
 
 module.exports = {
     getAll: function() {
         let sqlSyntax = mysql.format(
-            `SELECT * FROM master_produk`
+            `SELECT 
+                p.*, k.nama AS kategori_nama 
+            FROM master_produk AS p
+            LEFT JOIN master_produk_kategori AS k ON k.id = p.kategori_id;`
         )
         return eksekusi(sqlSyntax)
     },

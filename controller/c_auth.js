@@ -7,7 +7,7 @@ module.exports = {
             res.redirect('/toko')
         } else {
             let data = {
-                notification: req.query.notification,
+                notifikasi: req.query.notification,
             }
             res.render('v_auth/login', data)
         }
@@ -45,7 +45,7 @@ module.exports = {
         if (req.session.user) {
             next()
         } else {
-            let pesan = `Sesi Anda sudah habis, silakan login lagi.`
+            let pesan = `Sesi Anda sudah habis, silakan login kembali.`
             res.redirect(`/auth/login?notification=${pesan}`)
         }
     },

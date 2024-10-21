@@ -4,6 +4,12 @@
 <div class="container my-5">
     <h1>Produk Indeks</h1>
     <hr>
+    <!-- <% if (typeof notification !== 'undefined') { %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <%= notification %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %> -->
     <br>
     <div class="row">        
         <a href="/olshop/produk/tambah" class="btn btn-primary">
@@ -20,43 +26,38 @@
                 <th>Harga</th>
                 <th>Stok</th>
                 <th>Foto</th>
-                <th>Video</th>
-                <th>Deskripsi</th>
-                <th>Spesifikasi</th>
-                <th>Info Penting</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
+            <% for (const i in produkJual) { %>
             <tr>
-                <td>1</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Detail Edit Hapus</td>
+                <td><%= Number(i) + 1 %></td>
+                <td><%= produkJual[i].nama %></td>
+                <td><%= produkJual[i].kategori_nama %></td>
+                <td><%= produkJual[i].harga %></td>
+                <td><%= produkJual[i].stok %></td>
+                <td><%= produkJual[i].foto1 %></td>
+                <td>
+                    <a href="/olshop/produk/detail/<%= produkJual[i].id %>" class="btn btn-sm btn-outline-info">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+                    <a href="/olshop/produk/edit/<%= produkJual[i].id %>" class="btn btn-sm btn-outline-warning">
+                        <i class="fa-solid fa-edit"></i>
+                    </a>
+                    <a href="/olshop/produk/hapus/<%= produkJual[i].id %>" class="btn btn-sm btn-outline-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Kolom</td>
-                <td>Detail Edit Hapus</td>
-            </tr>
+            <% } %>
         </tbody>
     </table>
 </div>
+
+<!-- <pre>
+    <%= JSON.stringify(produkJual, null, 4) %>
+</pre> -->
 
 <%- include('../../v_layout/olshop-footer') %>
 <%- include('../../v_layout/foot') %>
