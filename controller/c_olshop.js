@@ -36,9 +36,9 @@ module.exports = {
         let email           = req.session.user[0].email.replaceAll('.','-')
         let datetime        = moment().format('YYYYMMDD_HHmmss')
 
-        let filename_foto1  = email + '_' + datetime + '_' + foto1.name
-        let filename_foto2  = email + '_' + datetime + '_' + foto2.name
-        let filename_foto3  = email + '_' + datetime + '_' + foto3.name
+        let filename_foto1  = email + '_' + datetime + '_' + ((foto1) ? foto1.name : '')
+        let filename_foto2  = email + '_' + datetime + '_' + ((foto2) ? foto2.name : '')
+        let filename_foto3  = email + '_' + datetime + '_' + ((foto3) ? foto3.name : '')
 
         let folder1_simpan  = path.join(__dirname, '../public/upload/produk-foto', filename_foto1)
         let folder2_simpan  = path.join(__dirname, '../public/upload/produk-foto', filename_foto2)
