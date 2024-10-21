@@ -7,7 +7,7 @@ const eksekusi          = config_database.eksekusi
 module.exports = {
     getAll: function() {
         let sqlSyntax = mysql.format(
-            `SELECT 
+            `SELECT
                 p.*, k.nama AS kategori_nama 
             FROM master_produk AS p
             LEFT JOIN master_produk_kategori AS k ON k.id = p.kategori_id;`
@@ -15,13 +15,13 @@ module.exports = {
         return eksekusi(sqlSyntax)
     },
     
-    insert: function(req) {
+    insert: function(req, filename_foto1) {
         let sqlData = {
             nama            : req.body.form_nama,
             harga           : req.body.form_harga,
             stok            : req.body.form_harga,
             kategori_id     : req.body.form_kategori,
-            foto1           : req.body.form_foto1,
+            foto1           : filename_foto1,
             foto2           : req.body.form_foto2,
             foto3           : req.body.form_foto3,
             video           : req.body.form_video,
